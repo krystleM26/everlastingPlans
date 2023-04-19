@@ -6,7 +6,7 @@ import {
   StyleSheet,
   useWindowDimensions,
 } from 'react-native'
-import Logo from '../../assets/images/EVLogo.png'
+import Logo from '../../assets/EVLogo.png'
 import CustomInput from '../components/CustomInput'
 import CustomButton from '../components/CustomButton'
 
