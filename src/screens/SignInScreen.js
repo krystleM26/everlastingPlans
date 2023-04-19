@@ -5,6 +5,7 @@ import {
   Image,
   StyleSheet,
   useWindowDimensions,
+  ScrollView,
 } from 'react-native'
 import Logo from '../../assets/EVLogo.png'
 import CustomInput from '../components/CustomInput'
@@ -32,51 +33,62 @@ const SignInScreen = () => {
     console.warn('Sign In With Apple')
   }
 
+  const onSignUpPressed = () => {
+    console.warn('SignUp')
+  }
+
   return (
-    <View>
-      <Image
-        source={Logo}
-        style={[styles.logo, { height: height * 0.3 }]}
-        resizeMode="contain"
-      />
+    <ScrollView>
+      <View>
+        <Image
+          source={Logo}
+          style={[styles.logo, { height: height * 0.3 }]}
+          resizeMode="contain"
+        />
 
-      <CustomInput
-        placeholder="Username"
-        value={username}
-        setValue={setUsername}
-      />
-      <CustomInput
-        placeholder="Password"
-        value={password}
-        setValue={setPassword}
-        secureTextEntry={true}
-      />
+        <CustomInput
+          placeholder="Username"
+          value={username}
+          setValue={setUsername}
+        />
+        <CustomInput
+          placeholder="Password"
+          value={password}
+          setValue={setPassword}
+          secureTextEntry={true}
+        />
 
-      <CustomButton text="Sign In" onPress={onSignInPressed} />
-      <CustomButton
-        text="Forgot password"
-        onPress={onForgotPasswordPressed}
-        type="TERTIARY"
-      />
-      <CustomButton
-        text="Sign In with Google"
-        onPress={onSigninWithGooglePressed}
-        bgColor="#FAE9EA"
-        fgColor="#DD4D44"
-      />
-      <CustomButton
-        text="Sign In with FaceBook"
-        onPress={onSigninWithFaceBookPressed}
-        bgColor="#E7EAF4"
-        fgColor="#4765A9"
-      />
-      <CustomButton
-        text="Sign In with Apple"
-        onPress={onSigninWithApplePressed}
-        bgColor="#e3e3e3"
-        fgColor="#363636"
-      />
-    </View>
+        <CustomButton text="Sign In" onPress={onSignInPressed} />
+        <CustomButton
+          text="Forgot password"
+          onPress={onForgotPasswordPressed}
+          type="TERTIARY"
+        />
+        <CustomButton
+          text="Sign In with Google"
+          onPress={onSigninWithGooglePressed}
+          bgColor="#FAE9EA"
+          fgColor="#DD4D44"
+        />
+        <CustomButton
+          text="Sign In with FaceBook"
+          onPress={onSigninWithFaceBookPressed}
+          bgColor="#E7EAF4"
+          fgColor="#4765A9"
+        />
+        <CustomButton
+          text="Sign In with Apple"
+          onPress={onSigninWithApplePressed}
+          bgColor="#e3e3e3"
+          fgColor="#363636"
+        />
+        <CustomButton
+          text="Don't have an account? Create one"
+          onPress={onSignUpPressed}
+          type="TERTIARY"
+        />
+      </View>
+    </ScrollView>
   )
 }
 
