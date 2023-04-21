@@ -7,34 +7,24 @@ import {
   useWindowDimensions,
   ScrollView,
 } from 'react-native'
-import Logo from '../../assets/EVLogo.png'
-import CustomInput from '../components/CustomInput'
-import CustomButton from '../components/CustomButton'
+import { useNavigation, userNavigation } from '@react-navigation/native'
+import Logo from '../../../assets/EVLogo.png'
+import CustomInput from '../../components/CustomInput'
+import CustomButton from '../../components/CustomButton'
+import SocialSignInBtn from '../../components/CustomButton/SocialSignInBtn/SocialSignInBtn'
 
 const SignInScreen = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const { height } = useWindowDimensions()
-
-  const onSignInPressed = () => {
-    console.warn('Sign in')
-  }
-
-  const onForgotPasswordPressed = () => {
-    console.warn('Forgot Password')
-  }
-  const onSigninWithGooglePressed = () => {
-    console.warn('Sign In With Google')
-  }
-  const onSigninWithFaceBookPressed = () => {
-    console.warn('Sign In With FaceBook')
-  }
-  const onSigninWithApplePressed = () => {
-    console.warn('Sign In With Apple')
-  }
+  const navigation = useNavigation()
 
   const onSignUpPressed = () => {
     console.warn('SignUp')
+    navigation.navigate('SignUp')
+  }
+  const onForGotPassword = () => {
+    navigation.navigate('ResetPassword')
   }
 
   return (
@@ -57,31 +47,13 @@ const SignInScreen = () => {
           setValue={setPassword}
           secureTextEntry={true}
         />
-
-        <CustomButton text="Sign In" onPress={onSignInPressed} />
         <CustomButton
-          text="Forgot password"
-          onPress={onForgotPasswordPressed}
+          placeholder="Forgot Password"
+          onPress={onForGotPassword}
           type="TERTIARY"
         />
-        <CustomButton
-          text="Sign In with Google"
-          onPress={onSigninWithGooglePressed}
-          bgColor="#FAE9EA"
-          fgColor="#DD4D44"
-        />
-        <CustomButton
-          text="Sign In with FaceBook"
-          onPress={onSigninWithFaceBookPressed}
-          bgColor="#E7EAF4"
-          fgColor="#4765A9"
-        />
-        <CustomButton
-          text="Sign In with Apple"
-          onPress={onSigninWithApplePressed}
-          bgColor="#e3e3e3"
-          fgColor="#363636"
-        />
+
+        <SocialSignInBtn />
         <CustomButton
           text="Don't have an account? Create one"
           onPress={onSignUpPressed}

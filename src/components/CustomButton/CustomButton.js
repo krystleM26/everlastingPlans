@@ -45,6 +45,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
   },
 
+  container_SECONDARY: {
+    borderColor: '#D4AF37',
+    borderWidth: 2,
+  },
+
   container_TERTIARY: {
     borderRadius: 5,
   },
@@ -52,6 +57,9 @@ const styles = StyleSheet.create({
   text_PRIMARY: {
     fontWeight: 'bold',
     color: 'white',
+  },
+  text_SECONDARY: {
+    color: 'black',
   },
   text_TERTIARY: {
     color: 'grey',
